@@ -28,3 +28,13 @@ train_idx, valid_idx = indices[split:], indices[:split]
 trainSampler = SubsetRandomSampler(train_idx)
 validSampler = SubsetRandomSampler(valid_idx)
 ```
+## Dataloader to access samples
+```bash
+train_loader = th.utils.data.DataLoader(train_data,batch_size=batch_size,             
+                                        sampler=trainSampler,num_workers=0)
+
+valid_loader = th.utils.data.DataLoader(train_data,batch_size=batch_size,             
+                                       sampler=validSampler, num_workers=0)
+
+test_loader = th.utils.data.DataLoader(test_data,batch_size=batch_size, num_workers=0) 
+```
